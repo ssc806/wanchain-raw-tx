@@ -13,15 +13,14 @@ function getPrivatekeyByKeystore(){
 	const address= config.fromAddr;
 	const passphrase = config.passphrase;
 
-	var keyObject = keythereum.importFromFile(address, datadir);
+	let keyObject = keythereum.importFromFile(address, datadir);
 	//Buffer
-	var privateKey = keythereum.recover(passphrase, keyObject);
+	let privateKey = keythereum.recover(passphrase, keyObject);
 
-	console.log('Private key is: ' + privateKey.toString('hex'));
+	//console.log('Private key is: ' + privateKey.toString('hex'));
 
 	return privateKey;
 }
-
 
 //Compose the transaction raw and feed to sign and send
 function composeRawData () {
@@ -61,10 +60,10 @@ function main() {
 	console.log('From address is: ' + config.fromAddr);
     console.log ('WAN checksum address is: ' + wanUtil.toChecksumAddress(config.fromAddr.toString('hex')));
 
-	rawData = composeRawData ();
-	privateKey = getPrivatekeyByKeystore();
+	let rawData = composeRawData ();
+	let privateKey = getPrivatekeyByKeystore();
 
-    signedRawData = signAndSerializeRawData(rawData, privateKey);
+    let signedRawData = signAndSerializeRawData(rawData, privateKey);
 
     web3.eth.sendRawTransaction(signedRawData, function(err, hash) {
 	    if (!err) {

@@ -7,9 +7,12 @@ Before use this script, you need to use the Wanchain Wallet to create a valid Wa
 
 # How to Use
 
-Fill the correct information in the config.js
+## 1. Lauch gwan locally
+>gwan --rpc --rpcapi=web3,eth,personal --rpcport "8545" --rpcaddr "127.0.0.1" --rpccorsdomain "127.0.0.1" 
 
-And then
+## 2.Fill the correct information in the config.js
+
+## 3. Execute the script
 
 > npm install
 
