@@ -7,12 +7,12 @@ Before use this script, you need to use the Wanchain Wallet to create a valid Wa
 
 # How to Use
 
-## 1. Lauch gwan locally
+### 1. Lauch gwan locally
 >gwan --rpc --rpcapi=web3,eth,personal --rpcport "8545" --rpcaddr "127.0.0.1" --rpccorsdomain "127.0.0.1" 
 
-## 2.Fill the correct information in the config.js
+### 2.Fill the correct information in the config.js
 
-## 3. Execute the script
+### 3. Execute the script
 
 > npm install
 
@@ -21,8 +21,8 @@ Before use this script, you need to use the Wanchain Wallet to create a valid Wa
 # For Ledger user
 ## 1.Using the following tool to export the private from the Ledger, make sure input the correct derive path
 
-## 2.Using the script privatekey-to-keystore.js to generate an Ethereum keystore
+### 2.Using the script privatekey-to-keystore.js to generate an Ethereum keystore
 
-## 3.Put the keystore in the datadir in config.js
+### 3.Put the keystore in the datadir in config.js
 OR
-## 3.Convert the Ethereum to a Wanchain keystore
+### 3.Convert the Ethereum to a Wanchain keystore
