@@ -3,10 +3,10 @@ const keythereum = require('keythereum');
 const Wallet = require('ethereumjs-wallet');
 const fs = require('fs');
 
-function privatekeyToKeystore(privatekey){
+function privatekeyToKeystore(privatekey, password){
 	const key = new Buffer(privatekey, 'hex');
 	const wallet = Wallet.fromPrivateKey(key);
-	const keystore = wallet.toV3String('password');
+	const keystore = wallet.toV3String(password);
 	const address = wallet.getAddress().toString('hex')
 
 	console.log('The address is: 0x'+ address)
@@ -27,7 +27,7 @@ function privatekeyToKeystore(privatekey){
 function keystoreToPrivatekey(address){
 	const keyObject = keythereum.importFromFile(address, '.');
 	//Buffer
-	const privateKey = keythereum.recover('password', keyObject);
+	const privateKey = keythereum.recover(password, keyObject);
 
 	console.log('Private key is: ' + privateKey.toString('hex'));
 
@@ -44,12 +44,9 @@ const privatekey = keystoreToPrivatekey('bf03e40968eeb092e5ced4d2434352fab64d864
 console.log(privatekey);
 */
 
-if (process.argv.length != 3) {
-	console.log('Usage: node private-to-keystore <privatekey>');
+if (process.argv.length != 4) {
+	console.log('Usage: node private-to-keystore <privatekey> <password-for-keystore>');
     process.exit(1);
 } else {
-	privatekeyToKeystore(process.argv[2]);
+	privatekeyToKeystore(process.argv[2], process.argv[3]);
 }
-
-
-
