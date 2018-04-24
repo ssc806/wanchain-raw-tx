@@ -21,6 +21,8 @@ Before use this script, you need to use the Wanchain Wallet to create a valid Wa
 # For Ledger user
 ### 1.Using the following tool to export the private from the Ledger, make sure input the correct derive path
 
+https://github.com/iancoleman/bip39
+
 ### 2.Using the script privatekey-to-keystore.js to generate an Ethereum keystore
 
 ### 3.Put the keystore in the datadir in config.js
