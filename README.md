@@ -17,3 +17,12 @@ Before use this script, you need to use the Wanchain Wallet to create a valid Wa
 > npm install
 
 > npm index.js
+
+#For Ledger user
+## Using the following tool to export the private from the Ledger, make sure input the correct derive path
+
+## Using the script privatekey-to-keystore.js to generate an Ethereum keystore
+
+## Put the keystore in the datadir in config.js
+OR
+## Convert the Ethereum to a Wanchain keystore
